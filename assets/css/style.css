@@ -511,6 +511,10 @@ main {
   gap: 1.25rem;
 }
 
+.azurepath-grid {
+  margin-block-start: 1.25rem;
+}
+
 .subgrid-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));

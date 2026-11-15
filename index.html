@@ -428,110 +428,44 @@ Content-Type: application/json
         <div class="section-header">
           <div>
             <p class="section-kicker">04 // University Research &bull; Research Methodology (COMP6696001)</p>
-            <h2 class="section-title">AzurePath: Graph-Based Detection &amp; Minimal Remediation in Azure IAM</h2>
+            <h2 class="section-title">AzurePath: Privilege Escalation Analysis in Azure RBAC &amp; Entra ID</h2>
             <p class="section-lead">
-              Research co-authored at BINUS University modeling Azure RBAC and Microsoft Entra ID snapshots as a directed graph
-              to uncover multi-step escalation chains, rank findings with explainable 0&ndash;100 scores, and simulate remediation cuts offline.
+              A university research project co-authored at BINUS University studying how misconfigured permissions across
+              <strong>Azure RBAC</strong> and <strong>Microsoft Entra ID</strong> combine into multi-step privilege escalation paths,
+              and how defenders can prioritize and test remediation safely on an offline snapshot before altering a live tenant.
             </p>
           </div>
-          <span class="badge badge-accent">Python CLI + TypeScript Workbench</span>
-        </div>
-
-        <!-- Interactive Attack Graph & Cut Simulator -->
-        <div class="workbench-card" aria-label="Interactive AzurePath Attack Graph and Cut Simulator">
-          <div class="workbench-top">
-            <div>
-              <h3>Interactive Attack Graph &amp; Cut Simulator</h3>
-              <p class="section-lead">
-                Select an Azure IAM scenario below and click <strong>Simulate Cut</strong> to break the privilege path on an offline snapshot copy.
-              </p>
-            </div>
-            <div class="workbench-controls">
-              <button type="button" id="ap-lang-btn" class="btn btn-sm">Lang: EN / ID</button>
-              <button type="button" id="ap-cut-btn" class="btn btn-sm btn-primary">Simulate Cut</button>
-            </div>
-          </div>
-
-          <div id="ap-scenario-tabs" class="scenario-tabs" role="group" aria-label="Attack graph scenarios"></div>
-
-          <div class="workbench-grid">
-            <div class="graph-stage">
-              <svg
-                id="ap-graph-svg"
-                viewBox="0 0 580 215"
-                class="graph-svg"
-                role="img"
-                aria-label="Directed attack graph connecting principal, intermediate Azure resources or groups, and privilege sink"
-              ></svg>
-              <div class="graph-footer">
-                <span id="ap-path-status" class="status-pill-text"></span>
-                <span id="ap-cli-preview" class="cli-preview"></span>
-              </div>
-            </div>
-
-            <aside class="score-panel" aria-label="Explainable scoring breakdown">
-              <div>
-                <div class="score-header">
-                  <strong id="ap-score-label">Explainable Score (0-100)</strong>
-                  <span id="ap-score-badge" class="badge badge-high">90 / 100</span>
-                </div>
-                <ul id="ap-factors-list" class="factors-list"></ul>
-              </div>
-              <p id="ap-scenario-desc" class="scenario-desc"></p>
-            </aside>
-          </div>
+          <span class="badge badge-accent">Azure RBAC &amp; Entra ID</span>
         </div>
 
         <article class="card">
-          <h3>Research Architecture &amp; Scope</h3>
-          <ul>
-            <li><strong>Dual-Engine Pipeline:</strong> Implemented in both Python (<code>AzurePrivEscGraph</code> CLI exporting <code>report.json</code>, <code>paths.csv</code>, <code>attack-graph.graphml</code>) and TypeScript/React for an interactive web workbench.</li>
-            <li><strong>14 Snapshot Entity Types:</strong> Evaluates principals, nested groups, custom roles, <code>notActions</code> / <code>notDataActions</code> exclusions, PIM eligibility, compute managed identities, app ownership bridges, and Key Vault access policies.</li>
-            <li><strong>Safe Offline Cut Simulation:</strong> Clones the JSON snapshot in memory, removes a candidate assignment/membership edge, reruns path detection, and classifies impact as <code>Closed</code>, <code>Remaining</code>, or <code>Surfaced</code> before generating reviewable <code>az</code> CLI commands.</li>
-            <li><strong>Evaluation Protocol (Pending Lab Execution):</strong> Designed around 4 Research Questions (<code>RQ1&ndash;RQ4</code>) comparing seeded lab precision/recall, independent reviewer urgency rankings, post-cut fidelity, and capabilities against AzureHound + BloodHound CE.</li>
-          </ul>
+          <h3>What the Project Is</h3>
+          <p>
+            Flat lists of direct role assignments often miss indirect privilege escalation. In AzurePath, we modeled a tenant&apos;s
+            identity and resource configuration as a directed relationship graph, tracing paths from starting principals to sensitive
+            administrative permissions, scoring each finding with human-readable factors, and simulating relationship removal
+            on an isolated snapshot copy before recommending Azure CLI changes.
+          </p>
         </article>
 
-        <div class="gallery-grid">
-          <figure class="gallery-figure">
-            <button
-              type="button"
-              class="media-trigger"
-              data-lightbox
-              data-title="AzurePath Research Overview Slide"
-              data-caption="Title slide for Graph-Based Detection and Minimal Remediation of Privilege Escalation Paths in Azure IAM (BINUS University Research Methodology)."
-            >
-              <img
-                src="assets/img/azurepath-overview.png"
-                alt="AzurePath research presentation title slide illustrating a directed privilege graph"
-                loading="lazy"
-                width="1672"
-                height="941"
-              >
-              <span class="zoom-hint">Zoom</span>
-            </button>
-            <figcaption><strong>Research Deck Overview:</strong> Co-authored at BINUS University (<code>COMP6696001</code>).</figcaption>
-          </figure>
+        <div class="card-grid-2 azurepath-grid">
+          <article class="card">
+            <h3>How I Understand Azure RBAC</h3>
+            <ul>
+              <li><strong>Actions vs. NotActions:</strong> Effective permissions depend on subtracting <code>notActions</code> and <code>notDataActions</code> from role definitions&mdash;for example, recognizing why broad roles like <code>Contributor</code> explicitly exclude <code>Microsoft.Authorization/*/Write</code> and cannot assign <code>Owner</code>.</li>
+              <li><strong>Scope Inheritance:</strong> Assignments cascade from <strong>Management Groups</strong> down through <strong>Subscriptions</strong>, <strong>Resource Groups</strong>, and individual resources, alongside <code>denyAssignments</code> boundaries.</li>
+              <li><strong>Managed Identity Pivot Paths:</strong> Control over compute resources or permission to attach a user-assigned Managed Identity can bridge resource-level access into subscription-wide RBAC privileges.</li>
+            </ul>
+          </article>
 
-          <figure class="gallery-figure">
-            <button
-              type="button"
-              class="media-trigger"
-              data-lightbox
-              data-title="AzurePath End-to-End System Architecture"
-              data-caption="Shared JSON snapshot schema connecting read-only ARM/Graph collection, directed graph construction, explainable scoring, and non-destructive offline cut simulation."
-            >
-              <img
-                src="assets/img/azurepath-architecture.png"
-                alt="AzurePath system architecture diagram from read-only Azure scan and JSON snapshot to graph construction, path detection, explainable scoring, and offline remediation simulation"
-                loading="lazy"
-                width="1672"
-                height="941"
-              >
-              <span class="zoom-hint">Zoom</span>
-            </button>
-            <figcaption><strong>System Architecture:</strong> Shared snapshot model powering detection, scoring, and offline simulation.</figcaption>
-          </figure>
+          <article class="card">
+            <h3>How I Understand Microsoft Entra ID</h3>
+            <ul>
+              <li><strong>Transitive Group Membership:</strong> Nested groups create multi-hop trust chains where an ordinary user inherits administrative RBAC or directory roles indirectly through parent groups.</li>
+              <li><strong>App &amp; Service Principal Bridges:</strong> Entra Application ownership, credential management, and directory roles can give a directory identity control over Service Principals that hold privileged Azure RBAC assignments.</li>
+              <li><strong>PIM Eligibility vs. Standing Access:</strong> Distinguishing permanently active roles from <strong>Privileged Identity Management (PIM)</strong> eligible assignments that require explicit activation and policy checks.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -569,12 +503,11 @@ Content-Type: application/json
             <ul class="tag-list">
               <li class="tag">Python</li>
               <li class="tag">PHP 8.5</li>
-              <li class="tag">TypeScript / JS</li>
+              <li class="tag">JavaScript</li>
               <li class="tag">SQL / MySQL 8.4</li>
               <li class="tag">C</li>
               <li class="tag">Java</li>
               <li class="tag">Bash / Linux</li>
-              <li class="tag">GraphML / Cypher-like Query</li>
             </ul>
             <p class="timeline-meta">Repositories: SecProg_AOL, SNAproject, bakery-webapp</p>
           </article>
