@@ -83,7 +83,7 @@
             class="media-trigger"
             data-lightbox
             data-title="PortSwigger Web Security Academy Progress"
-            data-caption="119 labs completed across Apprentice (37/61), Practitioner (72/173), and Expert (10/39) tiers — preparing for the Burp Suite Certified Practitioner (BSCP) exam."
+            data-caption="119 labs completed across Apprentice (37/61), Practitioner (72/173), and Expert (10/39) tiers on PortSwigger Web Security Academy."
           >
             <img
               src="assets/img/portswigger-progress.jpg"
@@ -94,10 +94,6 @@
             >
             <span class="zoom-hint">Click to zoom</span>
           </button>
-          <figcaption>
-            <span><strong>PortSwigger Academy:</strong> 37 Apprentice, 72 Practitioner, 10 Expert solved (35/51 SQLi).</span>
-            <span class="badge badge-accent">BSCP Track</span>
-          </figcaption>
         </figure>
       </div>
     </section>
@@ -199,10 +195,10 @@
         <article class="card">
           <h3>How Changing One JSON Field Exposed Another Student&apos;s GPA</h3>
           <p>
-            The academic score endpoint accepted a valid student session JWT in the <code>Authorization</code> header,
-            but looked up which student&apos;s grades to return using the client-supplied <code>personCode</code> field in the
-            request body. Because the server never checked whether the token owner matched <code>personCode</code>, any
-            authenticated user could query another student&apos;s <code>currentGPA</code> and <code>cumulativeGPA</code> in read-only mode.
+            In an illustrative API pattern based on my disclosures, a grade-lookup endpoint accepted a valid student session JWT in the <code>Authorization</code> header,
+            but looked up which student&apos;s record to return using the client-supplied <code>student_id</code> field in the
+            request body. Because the server never checked whether the token owner matched <code>student_id</code>, any
+            authenticated user could query another student&apos;s <code>term_gpa</code> and <code>cumulative_gpa</code> in read-only mode.
           </p>
 
           <figure class="diagram-frame">
@@ -212,40 +208,40 @@
               aria-labelledby="idor-diagram-title idor-diagram-desc"
             >
               <title id="idor-diagram-title">IDOR Vulnerable Flow vs. Remediated Flow</title>
-              <desc id="idor-diagram-desc">Comparison showing the vulnerable endpoint querying the database directly from client body personCode versus the fixed endpoint deriving identity from the verified JWT subject and returning HTTP 403 on mismatch.</desc>
+              <desc id="idor-diagram-desc">Comparison showing the vulnerable endpoint querying the database directly from client body student_id versus the fixed endpoint deriving identity from the verified JWT subject and returning HTTP 403 on mismatch.</desc>
 
               <!-- Vulnerable Flow (Top) -->
               <text x="16" y="24" fill="#fb7185" font-size="13" font-family="monospace" font-weight="700">VULNERABLE FLOW (HTTP 200 Leak)</text>
               <rect x="16" y="38" width="180" height="52" rx="8" fill="#1e293b" stroke="#fb7185" stroke-width="1.8" />
               <text x="106" y="60" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">Student A JWT</text>
-              <text x="106" y="78" text-anchor="middle" fill="#fda4af" font-size="11" font-family="monospace">personCode: BN_TARGET</text>
+              <text x="106" y="78" text-anchor="middle" fill="#fda4af" font-size="11" font-family="monospace">student_id: STU-2048</text>
 
               <line x1="196" y1="64" x2="262" y2="64" stroke="#fb7185" stroke-width="2" />
               <polygon points="262,59 272,64 262,69" fill="#fb7185" />
 
               <rect x="274" y="38" width="235" height="52" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.8" />
-              <text x="391" y="60" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">POST /Score/GetStudentScore</text>
-              <text x="391" y="78" text-anchor="middle" fill="#fcd34d" font-size="11">Trusts body.personCode directly</text>
+              <text x="391" y="60" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">POST /api/v1/portal/grades/view</text>
+              <text x="391" y="78" text-anchor="middle" fill="#fcd34d" font-size="11">Trusts body.student_id directly</text>
 
               <line x1="509" y1="64" x2="575" y2="64" stroke="#fb7185" stroke-width="2" />
               <polygon points="575,59 585,64 575,69" fill="#fb7185" />
 
               <rect x="587" y="38" width="215" height="52" rx="8" fill="#3f121d" stroke="#fb7185" stroke-width="1.8" />
               <text x="694" y="60" text-anchor="middle" fill="#fecdd3" font-size="12" font-weight="700">200 OK: Target GPA</text>
-              <text x="694" y="78" text-anchor="middle" fill="#fda4af" font-size="11" font-family="monospace">cumulativeGPA: 3.92</text>
+              <text x="694" y="78" text-anchor="middle" fill="#fda4af" font-size="11" font-family="monospace">cumulative_gpa: 3.81</text>
 
               <!-- Fixed Flow (Bottom) -->
               <text x="16" y="124" fill="#34d399" font-size="13" font-family="monospace" font-weight="700">REMEDIATED FLOW (Ownership Check)</text>
               <rect x="16" y="138" width="180" height="52" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.8" />
               <text x="106" y="160" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">Student A JWT</text>
-              <text x="106" y="178" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="monospace">jwt.sub == BN_SELF</text>
+              <text x="106" y="178" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="monospace">jwt.sub == STU-1024</text>
 
               <line x1="196" y1="164" x2="262" y2="164" stroke="#34d399" stroke-width="2" />
               <polygon points="262,159 272,164 262,169" fill="#34d399" />
 
               <rect x="274" y="138" width="235" height="52" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.8" />
               <text x="391" y="160" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">Server Policy Gate</text>
-              <text x="391" y="178" text-anchor="middle" fill="#6ee7b7" font-size="11" font-family="monospace">Verify jwt.sub === personCode</text>
+              <text x="391" y="178" text-anchor="middle" fill="#6ee7b7" font-size="11" font-family="monospace">Verify jwt.sub === student_id</text>
 
               <line x1="509" y1="164" x2="575" y2="164" stroke="#34d399" stroke-width="2" />
               <polygon points="575,159 585,164 575,169" fill="#34d399" />
@@ -261,42 +257,42 @@
 
           <div class="finding-walkthrough">
             <figure class="code-figure">
-              <figcaption id="idor-req-caption">Sanitized Request (Same Token, Swapped ID)</figcaption>
-              <pre role="region" aria-labelledby="idor-req-caption" tabindex="0"><code>POST /acadservices/Score/GetStudentScore HTTP/1.1
-Host: api.&lt;university-portal&gt;.tld
-Authorization: Bearer &lt;student_a_valid_jwt&gt;
+              <figcaption id="idor-req-caption">Example Request (Same Token, Swapped ID)</figcaption>
+              <pre role="region" aria-labelledby="idor-req-caption" tabindex="0"><code>POST /api/v1/portal/grades/view HTTP/1.1
+Host: portal.example-campus.invalid
+Authorization: Bearer &lt;student_a_session_jwt&gt;
 Content-Type: application/json
 
 {
-  "personCode": "&lt;student_b_public_id&gt;",
-  "academicPeriod": "20261"
+  "student_id": "STU-2048",
+  "term": "2026-odd"
 }</code></pre>
             </figure>
 
             <figure class="code-figure">
-              <figcaption id="idor-res-caption">Sanitized Response &amp; Recommended Fix</figcaption>
+              <figcaption id="idor-res-caption">Example Response &amp; Recommended Fix</figcaption>
               <pre role="region" aria-labelledby="idor-res-caption" tabindex="0"><code>HTTP/1.1 200 OK
 {
-  "credit": {
-    "totalCredits": 18,
-    "currentGPA": 3.93,
-    "cumulativeGPA": 3.92
+  "summary": {
+    "credits": 18,
+    "term_gpa": 3.85,
+    "cumulative_gpa": 3.81
   }
 }
 
 /* Fix: Derive subject exclusively from verified JWT claim
-   and return HTTP 403 if body.personCode != jwt.sub. */</code></pre>
+   and return HTTP 403 if body.student_id != jwt.sub. */</code></pre>
             </figure>
           </div>
 
           <details class="disclosure">
-            <summary>Second Disclosed Case Study: Broken Function Level Authorization (BFLA &bull; CWE-862 &bull; Medium)</summary>
+            <summary>Second Illustrative Case Study: Broken Function Level Authorization (BFLA &bull; CWE-862 &bull; Medium)</summary>
             <p>
-              In a separate library API audit, <code>POST /Collection/BE/MasterType/doSave</code> properly rejected anonymous requests
-              and malformed/<code>alg:none</code> JWTs, yet omitted the role check present on its sibling endpoint <code>DDC/doSave</code>
+              In a separate catalog API pattern (endpoints fictionalized), <code>POST /api/v1/catalog/reference/update</code> properly rejected anonymous requests
+              and malformed/<code>alg:none</code> JWTs, yet omitted the staff role check present on its sibling endpoint <code>/api/v1/catalog/taxonomy/update</code>
               (which returned <code>401 Unauthorized</code>). Any authenticated low-privilege <code>Guest</code> token could invoke
-              <code>Add</code>, <code>Edit</code>, and <code>Delete</code> handlers on shared reference dictionaries. Verified responsibly
-              using a single synthetic record (<code>EEDIT01</code>) and restored immediately to baseline.
+              <code>create</code>, <code>update</code>, and <code>delete</code> handlers on shared reference dictionaries. Verified safely
+              using a single synthetic record (<code>TEST_REF_01</code>) and restored immediately to baseline.
             </p>
           </details>
         </article>
@@ -591,7 +587,7 @@ Content-Type: application/json
               <li><strong>Algorithm &amp; Programming:</strong> Score 82</li>
               <li><strong>Spoken Languages:</strong> Indonesian, English, Mandarin Chinese</li>
             </ul>
-            <p class="timeline-meta">Continuous BSCP prep on PortSwigger Academy</p>
+            <p class="timeline-meta">Active practice on PortSwigger Web Security Academy</p>
           </article>
         </div>
       </div>
