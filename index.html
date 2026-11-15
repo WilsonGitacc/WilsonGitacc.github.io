@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Cybersecurity portfolio of Wilson Tjokro — BINUS University Cyber Security undergraduate, Ethical Hacker, Application Security researcher, Secure LMS builder, and AzurePath cloud IAM researcher.">
+  <title>Wilson Tjokro | Application Security &amp; Ethical Hacking Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">WT</span>
+        <span>Wilson Tjokro</span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#finding">Findings</a></li>
+          <li><a href="#secure-lms">Safe LMS</a></li>
+          <li><a href="#azurepath">AzurePath</a></li>
+          <li><a href="#skills">Skills</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="theme-toggle" class="btn btn-sm" aria-label="Cycle color theme between Auto, Dark, and Light">Theme: Auto</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero & About -->
+    <section id="top" class="hero section">
+      <div class="container hero-grid">
+        <div>
+          <div class="status-row">
+            <span class="badge badge-success">#OpenToWork &bull; Jakarta, Indonesia</span>
+            <span class="badge badge-accent">BINUS Cyber Security &apos;28</span>
+          </div>
+
+          <h1>Wilson Tjokro</h1>
+          <p class="hero-subtitle">Cyber Security Undergraduate &bull; Ethical Hacker &amp; Application Security Researcher</p>
+          <p class="hero-bio">
+            I am a Cyber Security undergraduate at <strong>BINUS University (Class of 2028)</strong> focused on
+            <strong>Application Security</strong>, <strong>AI-Assisted Penetration Testing</strong>,
+            <strong>Cloud IAM Graph Analysis (Microsoft Azure &amp; Entra ID)</strong>, and
+            <strong>Defense-in-Depth Web Engineering</strong>. I have identified and responsibly disclosed
+            real-world authorization vulnerabilities in production university web applications and APIs.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/wilson-tjokro-86302729b/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+            <a class="btn" href="https://github.com/WilsonGitacc" target="_blank" rel="noopener noreferrer">GitHub (@WilsonGitacc)</a>
+            <a class="btn" href="mailto:wilsontjokro9@gmail.com">wilsontjokro9@gmail.com</a>
+          </div>
+
+          <div class="metrics-strip">
+            <div class="metric-box">
+              <span class="metric-value">119 Labs</span>
+              <span class="metric-label">PortSwigger Academy (43%)</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-value">OWASP ASVS L2</span>
+              <span class="metric-label">Hardened LMS Project</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-value">Azure IAM</span>
+              <span class="metric-label">AzurePath Graph Research</span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="hero-showcase">
+          <button
+            type="button"
+            class="media-trigger"
+            data-lightbox
+            data-title="PortSwigger Web Security Academy Progress"
+            data-caption="119 labs completed across Apprentice (37/61), Practitioner (72/173), and Expert (10/39) tiers — preparing for the Burp Suite Certified Practitioner (BSCP) exam."
+          >
+            <img
+              src="assets/img/portswigger-progress.jpg"
+              alt="PortSwigger Web Security Academy dashboard showing 119 labs solved (43% completion), including 35 of 51 SQL injection labs, 72 Practitioner labs, and 10 Expert labs"
+              fetchpriority="high"
+              width="1024"
+              height="947"
+            >
+            <span class="zoom-hint">Click to zoom</span>
+          </button>
+          <figcaption>
+            <span><strong>PortSwigger Academy:</strong> 37 Apprentice, 72 Practitioner, 10 Expert solved (35/51 SQLi).</span>
+            <span class="badge badge-accent">BSCP Track</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">01 // Background &amp; Interests</p>
+            <h2 class="section-title">Experience, Education &amp; Research Interests</h2>
+            <p class="section-lead">
+              Combining hands-on offensive web testing with secure backend engineering and automated cloud privilege analysis.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-grid-2">
+          <article class="card">
+            <h3>Experience &amp; Academic Track</h3>
+            <ul class="timeline-list">
+              <li class="timeline-item">
+                <p class="timeline-meta">Nov 2026 &bull; Jakarta, Indonesia</p>
+                <strong>Ethical Hacker &mdash; BINUS University (Responsible Disclosure)</strong>
+                <p>
+                  Audited university web portals and REST/API gateway services. Discovered and responsibly reported
+                  high-severity Broken Object Level Authorization (IDOR) and Broken Function Level Authorization (BFLA)
+                  flaws with sanitized Proof-of-Concept evidence and remediation patches.
+                </p>
+              </li>
+              <li class="timeline-item">
+                <p class="timeline-meta">2024 &ndash; Present (Class of 2028) &bull; Universitas Bina Nusantara</p>
+                <strong>B.Sc. in Cyber Security &mdash; BINUS University</strong>
+                <p>
+                  Coursework includes Secure Programming (<code>COMP6695001</code>), Research Methodology in Computer Science
+                  (<code>COMP6696001</code>), Computer Forensics (<code>COMP6646001</code>), Linux Scripting &amp; Shell Programming
+                  (<code>COMP6843001</code>), and Computer Networks.
+                </p>
+              </li>
+              <li class="timeline-item">
+                <p class="timeline-meta">2021 &ndash; 2024 &bull; Medan, Indonesia</p>
+                <strong>SMA Sutomo 1 Medan (Natural Sciences)</strong>
+                <p>
+                  Completed joint Mikroskil University &amp; Sutomo School Foundation certifications in
+                  <em>Web Advance</em> (score <strong>94</strong>) and <em>Algorithm and Programming</em> (score <strong>82</strong>).
+                </p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Core Security Interests</h3>
+            <div class="subgrid-cards">
+              <div class="subgrid-card">
+                <span class="badge badge-accent">Offensive AppSec</span>
+                <p>
+                  Testing multi-role web apps and APIs for broken authorization (IDOR/BOLA, BFLA), SQL injection,
+                  prototype pollution, and server-side flaws using Burp Suite and systematic auth matrices.
+                </p>
+                <span class="timeline-meta">Focus: API Authorization &amp; Logic Bugs</span>
+              </div>
+              <div class="subgrid-card">
+                <span class="badge badge-success">AI-Assisted Pentesting</span>
+                <p>
+                  Pairing structured recon workflows and static JS bundle inspection with agentic tooling to map hidden
+                  routes, verify token boundaries cleanly, and speed up root-cause triage.
+                </p>
+                <span class="timeline-meta">Focus: Deterministic Verification</span>
+              </div>
+              <div class="subgrid-card">
+                <span class="badge badge-medium">Cloud IAM &amp; Secure Design</span>
+                <p>
+                  Modeling Microsoft Entra ID and Azure RBAC attack graphs while building hardened systems with
+                  least-privilege database roles, container sandboxing, and Argon2id + TOTP MFA.
+                </p>
+                <span class="timeline-meta">Focus: Graph Analysis &amp; ASVS L2</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple Finding Showcase -->
+    <section id="finding" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">02 // Practical Discovery (Sanitized)</p>
+            <h2 class="section-title">A Simple Real-World Finding: One-Line IDOR</h2>
+            <p class="section-lead">
+              Security vulnerabilities do not always require complex exploits. Below is a sanitized walkthrough of a
+              production <strong>Broken Object Level Authorization (IDOR / CWE-639)</strong> finding I responsibly disclosed.
+            </p>
+          </div>
+          <span class="badge badge-high">High &bull; CWE-639 (IDOR)</span>
+        </div>
+
+        <article class="card">
+          <h3>How Changing One JSON Field Exposed Another Student&apos;s GPA</h3>
+          <p>
+            The academic score endpoint accepted a valid student session JWT in the <code>Authorization</code> header,
+            but looked up which student&apos;s grades to return using the client-supplied <code>personCode</code> field in the
+            request body. Because the server never checked whether the token owner matched <code>personCode</code>, any
+            authenticated user could query another student&apos;s <code>currentGPA</code> and <code>cumulativeGPA</code> in read-only mode.
+          </p>
+
+          <figure class="diagram-frame">
+            <svg
+              viewBox="0 0 820 205"
+              role="img"
+              aria-labelledby="idor-diagram-title idor-diagram-desc"
+            >
+              <title id="idor-diagram-title">IDOR Vulnerable Flow vs. Remediated Flow</title>
+              <desc id="idor-diagram-desc">Comparison showing the vulnerable endpoint querying the database directly from client body personCode versus the fixed endpoint deriving identity from the verified JWT subject and returning HTTP 403 on mismatch.</desc>
+
+              <!-- Vulnerable Flow (Top) -->
+              <text x="16" y="24" fill="#fb7185" font-size="13" font-family="monospace" font-weight="700">VULNERABLE FLOW (HTTP 200 Leak)</text>
+              <rect x="16" y="38" width="180" height="52" rx="8" fill="#1e293b" stroke="#fb7185" stroke-width="1.8" />
+              <text x="106" y="60" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">Student A JWT</text>
+              <text x="106" y="78" text-anchor="middle" fill="#fda4af" font-size="11" font-family="monospace">personCode: BN_TARGET</text>
+
+              <line x1="196" y1="64" x2="262" y2="64" stroke="#fb7185" stroke-width="2" />
+              <polygon points="262,59 272,64 262,69" fill="#fb7185" />
+
+              <rect x="274" y="38" width="235" height="52" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.8" />
+              <text x="391" y="60" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">POST /Score/GetStudentScore</text>
+              <text x="391" y="78" text-anchor="middle" fill="#fcd34d" font-size="11">Trusts body.personCode directly</text>
+
+              <line x1="509" y1="64" x2="575" y2="64" stroke="#fb7185" stroke-width="2" />
+              <polygon points="575,59 585,64 575,69" fill="#fb7185" />
+
+              <rect x="587" y="38" width="215" height="52" rx="8" fill="#3f121d" stroke="#fb7185" stroke-width="1.8" />
+              <text x="694" y="60" text-anchor="middle" fill="#fecdd3" font-size="12" font-weight="700">200 OK: Target GPA</text>
+              <text x="694" y="78" text-anchor="middle" fill="#fda4af" font-size="11" font-family="monospace">cumulativeGPA: 3.92</text>
+
+              <!-- Fixed Flow (Bottom) -->
+              <text x="16" y="124" fill="#34d399" font-size="13" font-family="monospace" font-weight="700">REMEDIATED FLOW (Ownership Check)</text>
+              <rect x="16" y="138" width="180" height="52" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.8" />
+              <text x="106" y="160" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">Student A JWT</text>
+              <text x="106" y="178" text-anchor="middle" fill="#7dd3fc" font-size="11" font-family="monospace">jwt.sub == BN_SELF</text>
+
+              <line x1="196" y1="164" x2="262" y2="164" stroke="#34d399" stroke-width="2" />
+              <polygon points="262,159 272,164 262,169" fill="#34d399" />
+
+              <rect x="274" y="138" width="235" height="52" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.8" />
+              <text x="391" y="160" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="700">Server Policy Gate</text>
+              <text x="391" y="178" text-anchor="middle" fill="#6ee7b7" font-size="11" font-family="monospace">Verify jwt.sub === personCode</text>
+
+              <line x1="509" y1="164" x2="575" y2="164" stroke="#34d399" stroke-width="2" />
+              <polygon points="575,159 585,164 575,169" fill="#34d399" />
+
+              <rect x="587" y="138" width="215" height="52" rx="8" fill="#062e24" stroke="#34d399" stroke-width="1.8" />
+              <text x="694" y="160" text-anchor="middle" fill="#d1fae5" font-size="12" font-weight="700">403 Forbidden (On Mismatch)</text>
+              <text x="694" y="178" text-anchor="middle" fill="#6ee7b7" font-size="11">Cross-student read blocked</text>
+            </svg>
+            <figcaption>
+              Figure: Why binding queries to verified JWT claims (instead of client-controlled body IDs) prevents horizontal privilege escalation.
+            </figcaption>
+          </figure>
+
+          <div class="finding-walkthrough">
+            <figure class="code-figure">
+              <figcaption id="idor-req-caption">Sanitized Request (Same Token, Swapped ID)</figcaption>
+              <pre role="region" aria-labelledby="idor-req-caption" tabindex="0"><code>POST /acadservices/Score/GetStudentScore HTTP/1.1
+Host: api.&lt;university-portal&gt;.tld
+Authorization: Bearer &lt;student_a_valid_jwt&gt;
+Content-Type: application/json
+
+{
+  "personCode": "&lt;student_b_public_id&gt;",
+  "academicPeriod": "20261"
+}</code></pre>
+            </figure>
+
+            <figure class="code-figure">
+              <figcaption id="idor-res-caption">Sanitized Response &amp; Recommended Fix</figcaption>
+              <pre role="region" aria-labelledby="idor-res-caption" tabindex="0"><code>HTTP/1.1 200 OK
+{
+  "credit": {
+    "totalCredits": 18,
+    "currentGPA": 3.93,
+    "cumulativeGPA": 3.92
+  }
+}
+
+/* Fix: Derive subject exclusively from verified JWT claim
+   and return HTTP 403 if body.personCode != jwt.sub. */</code></pre>
+            </figure>
+          </div>
+
+          <details class="disclosure">
+            <summary>Second Disclosed Case Study: Broken Function Level Authorization (BFLA &bull; CWE-862 &bull; Medium)</summary>
+            <p>
+              In a separate library API audit, <code>POST /Collection/BE/MasterType/doSave</code> properly rejected anonymous requests
+              and malformed/<code>alg:none</code> JWTs, yet omitted the role check present on its sibling endpoint <code>DDC/doSave</code>
+              (which returned <code>401 Unauthorized</code>). Any authenticated low-privilege <code>Guest</code> token could invoke
+              <code>Add</code>, <code>Edit</code>, and <code>Delete</code> handlers on shared reference dictionaries. Verified responsibly
+              using a single synthetic record (<code>EEDIT01</code>) and restored immediately to baseline.
+            </p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <!-- University Project 1: Designing a Safe LMS -->
+    <section id="secure-lms" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">03 // University Project &bull; Secure Programming (COMP6695001)</p>
+            <h2 class="section-title">Designing a Safe LMS (OWASP ASVS Level 2)</h2>
+            <p class="section-lead">
+              A security-first university Learning Management System engineered with <strong>PHP 8.5.12 + Apache 2.4.69 + MySQL 8.4.13 LTS</strong>
+              in hardened Docker containers to eliminate IDOR, SQLi, CSRF, and lateral database movement by design.
+            </p>
+          </div>
+          <a class="btn" href="https://github.com/WilsonGitacc/SecProg_AOL" target="_blank" rel="noopener noreferrer">View GitHub Repo</a>
+        </div>
+
+        <div class="subgrid-cards">
+          <article class="card subgrid-card">
+            <h3>Central Policy Gate &amp; RBAC</h3>
+            <p>
+              Every request flows through a single front controller (<code>public/index.php</code>) enforcing deny-by-default
+              role checks across <code>Student</code>, <code>Lecturer</code>, and <code>Operator</code> roles, strict BOLA/IDOR
+              ownership filters, and constant-time CSRF validation (<code>hash_equals</code>).
+            </p>
+            <ul class="tag-list">
+              <li class="tag">Deny-by-Default</li>
+              <li class="tag">BOLA Prevention</li>
+              <li class="tag">Nonce CSP</li>
+            </ul>
+          </article>
+
+          <article class="card subgrid-card">
+            <h3>Cryptography &amp; DB Least Privilege</h3>
+            <p>
+              Passwords are hashed with <strong>Argon2id</strong> (<code>memory_cost=65536, time_cost=4</code>) alongside
+              TOTP 2FA and session revocation. Queries use native PDO prepared statements (<code>ATTR_EMULATE_PREPARES = false</code>)
+              via a DML-only DB user (<code>lms_app</code>) over 31 3NF tables with immutable audit triggers.
+            </p>
+            <ul class="tag-list">
+              <li class="tag">Argon2id + TOTP</li>
+              <li class="tag">PDO Prepared</li>
+              <li class="tag">Audit Triggers</li>
+            </ul>
+          </article>
+
+          <article class="card subgrid-card">
+            <h3>Docker Network &amp; Rootfs Hardening</h3>
+            <p>
+              The web container runs as unprivileged <code>www-data</code> (<code>uid=33:33</code>) with
+              <code>read_only: true</code>, <code>cap_drop: [ALL]</code>, and <code>no-new-privileges: true</code>. MySQL sits on
+              an isolated <code>internal: true</code> backend network with port <code>3306</code> completely unpublished to the host.
+            </p>
+            <ul class="tag-list">
+              <li class="tag">read_only Rootfs</li>
+              <li class="tag">cap_drop ALL</li>
+              <li class="tag">Internal DB Net</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-figure">
+            <button
+              type="button"
+              class="media-trigger"
+              data-lightbox
+              data-title="Secure LMS — Role-Scoped Courses View"
+              data-caption="Lecturer dashboard displaying scoped courses (Computer Forensic, HCI, Reverse Engineering, Secure Programming) under strict RBAC and nonce CSP."
+            >
+              <img
+                src="assets/img/secure-lms-courses.png"
+                alt="Secure LMS lecturer courses dashboard showing four core computer science and cybersecurity courses"
+                loading="lazy"
+                width="1024"
+                height="792"
+              >
+              <span class="zoom-hint">Zoom</span>
+            </button>
+            <figcaption><strong>Courses View:</strong> Role-scoped curriculum cards &amp; navigation.</figcaption>
+          </figure>
+
+          <figure class="gallery-figure">
+            <button
+              type="button"
+              class="media-trigger"
+              data-lightbox
+              data-title="Secure LMS — Operator Governance &amp; Privacy Guard"
+              data-caption="Operator console supporting pseudonymized user unlocks, session revocation, and service tickets with password hashes redacted and no grade access."
+            >
+              <img
+                src="assets/img/secure-lms-operator.png"
+                alt="Secure LMS operator user management table displaying pseudonymized accounts, session revocation controls, and redacted privilege boundaries"
+                loading="lazy"
+                width="957"
+                height="1024"
+              >
+              <span class="zoom-hint">Zoom</span>
+            </button>
+            <figcaption><strong>Operator Console:</strong> Pseudonymized directory, session revocation &amp; zero grade access.</figcaption>
+          </figure>
+
+          <figure class="gallery-figure">
+            <button
+              type="button"
+              class="media-trigger"
+              data-lightbox
+              data-title="Secure LMS — Schedule &amp; Assignment Calendar"
+              data-caption="Student calendar view filtering assignment due dates and exporting personal .ics feeds while preventing cross-tenant schedule tampering."
+            >
+              <img
+                src="assets/img/secure-lms-schedule.png"
+                alt="Secure LMS student schedule interface showing October 2026 calendar, course assignment deadline, and ICS export action"
+                loading="lazy"
+                width="1024"
+                height="462"
+              >
+              <span class="zoom-hint">Zoom</span>
+            </button>
+            <figcaption><strong>Schedule View:</strong> Filtered class deadlines and scoped <code>.ics</code> export.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- University Project 2: AzurePath Cloud Security Research -->
+    <section id="azurepath" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">04 // University Research &bull; Research Methodology (COMP6696001)</p>
+            <h2 class="section-title">AzurePath: Graph-Based Detection &amp; Minimal Remediation in Azure IAM</h2>
+            <p class="section-lead">
+              Research co-authored at BINUS University modeling Azure RBAC and Microsoft Entra ID snapshots as a directed graph
+              to uncover multi-step escalation chains, rank findings with explainable 0&ndash;100 scores, and simulate remediation cuts offline.
+            </p>
+          </div>
+          <span class="badge badge-accent">Python CLI + TypeScript Workbench</span>
+        </div>
+
+        <!-- Interactive Attack Graph & Cut Simulator -->
+        <div class="workbench-card" aria-label="Interactive AzurePath Attack Graph and Cut Simulator">
+          <div class="workbench-top">
+            <div>
+              <h3>Interactive Attack Graph &amp; Cut Simulator</h3>
+              <p class="section-lead">
+                Select an Azure IAM scenario below and click <strong>Simulate Cut</strong> to break the privilege path on an offline snapshot copy.
+              </p>
+            </div>
+            <div class="workbench-controls">
+              <button type="button" id="ap-lang-btn" class="btn btn-sm">Lang: EN / ID</button>
+              <button type="button" id="ap-cut-btn" class="btn btn-sm btn-primary">Simulate Cut</button>
+            </div>
+          </div>
+
+          <div id="ap-scenario-tabs" class="scenario-tabs" role="group" aria-label="Attack graph scenarios"></div>
+
+          <div class="workbench-grid">
+            <div class="graph-stage">
+              <svg
+                id="ap-graph-svg"
+                viewBox="0 0 580 215"
+                class="graph-svg"
+                role="img"
+                aria-label="Directed attack graph connecting principal, intermediate Azure resources or groups, and privilege sink"
+              ></svg>
+              <div class="graph-footer">
+                <span id="ap-path-status" class="status-pill-text"></span>
+                <span id="ap-cli-preview" class="cli-preview"></span>
+              </div>
+            </div>
+
+            <aside class="score-panel" aria-label="Explainable scoring breakdown">
+              <div>
+                <div class="score-header">
+                  <strong id="ap-score-label">Explainable Score (0-100)</strong>
+                  <span id="ap-score-badge" class="badge badge-high">90 / 100</span>
+                </div>
+                <ul id="ap-factors-list" class="factors-list"></ul>
+              </div>
+              <p id="ap-scenario-desc" class="scenario-desc"></p>
+            </aside>
+          </div>
+        </div>
+
+        <div class="card-grid-2">
+          <article class="card">
+            <h3>Research Architecture &amp; Scope</h3>
+            <ul>
+              <li><strong>Dual-Engine Pipeline:</strong> Implemented in both Python (<code>AzurePrivEscGraph</code> CLI exporting <code>report.json</code>, <code>paths.csv</code>, <code>attack-graph.graphml</code>) and TypeScript/React for an interactive web workbench.</li>
+              <li><strong>14 Snapshot Entity Types:</strong> Evaluates principals, nested groups, custom roles, <code>notActions</code> / <code>notDataActions</code> exclusions, PIM eligibility, compute managed identities, app ownership bridges, and Key Vault access policies.</li>
+              <li><strong>Safe Offline Cut Simulation:</strong> Clones the JSON snapshot in memory, removes a candidate assignment/membership edge, reruns path detection, and classifies impact as <code>Closed</code>, <code>Remaining</code>, or <code>Surfaced</code> before generating reviewable <code>az</code> CLI commands.</li>
+              <li><strong>Evaluation Protocol (Pending Lab Execution):</strong> Designed around 4 Research Questions (<code>RQ1&ndash;RQ4</code>) comparing seeded lab precision/recall, independent reviewer urgency rankings, post-cut fidelity, and capabilities against AzureHound + BloodHound CE.</li>
+            </ul>
+          </article>
+
+          <div class="gallery-figure">
+            <button
+              type="button"
+              class="media-trigger"
+              data-lightbox
+              data-title="AzurePath Research Overview Slide"
+              data-caption="Title slide for Graph-Based Detection and Minimal Remediation of Privilege Escalation Paths in Azure IAM (BINUS University Research Methodology)."
+            >
+              <img
+                src="assets/img/azurepath-overview.png"
+                alt="AzurePath research presentation title slide illustrating a directed privilege graph"
+                loading="lazy"
+                width="1672"
+                height="941"
+              >
+              <span class="zoom-hint">Zoom</span>
+            </button>
+            <figcaption><strong>Research Deck Overview:</strong> Co-authored at BINUS University (<code>COMP6696001</code>).</figcaption>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-figure">
+            <button
+              type="button"
+              class="media-trigger"
+              data-lightbox
+              data-title="AzurePath End-to-End System Architecture"
+              data-caption="Shared JSON snapshot schema connecting read-only ARM/Graph collection, directed graph construction, explainable scoring, and non-destructive offline cut simulation."
+            >
+              <img
+                src="assets/img/azurepath-architecture.png"
+                alt="AzurePath system architecture diagram from read-only Azure scan and JSON snapshot to graph construction, path detection, explainable scoring, and offline remediation simulation"
+                loading="lazy"
+                width="1672"
+                height="941"
+              >
+              <span class="zoom-hint">Zoom</span>
+            </button>
+            <figcaption><strong>System Architecture:</strong> Shared snapshot model powering detection, scoring, and offline simulation.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills, Certifications & Languages -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">05 // Technical Stack &amp; Credentials</p>
+            <h2 class="section-title">Skills, Certifications &amp; Languages</h2>
+          </div>
+        </div>
+
+        <div class="subgrid-cards">
+          <article class="card subgrid-card">
+            <h3>Security &amp; Cloud Tooling</h3>
+            <ul class="tag-list">
+              <li class="tag">Penetration Testing</li>
+              <li class="tag">Application Security</li>
+              <li class="tag">Burp Suite</li>
+              <li class="tag">OWASP ASVS / Top 10</li>
+              <li class="tag">Microsoft Azure</li>
+              <li class="tag">Entra ID &amp; IAM</li>
+              <li class="tag">RBAC Analysis</li>
+              <li class="tag">Network Security</li>
+              <li class="tag">System Administration</li>
+              <li class="tag">Docker Hardening</li>
+            </ul>
+            <p class="timeline-meta">Focused on authorization auditing &amp; cloud attack paths</p>
+          </article>
+
+          <article class="card subgrid-card">
+            <h3>Languages &amp; Engineering</h3>
+            <ul class="tag-list">
+              <li class="tag">Python</li>
+              <li class="tag">PHP 8.5</li>
+              <li class="tag">TypeScript / JS</li>
+              <li class="tag">SQL / MySQL 8.4</li>
+              <li class="tag">C</li>
+              <li class="tag">Java</li>
+              <li class="tag">Bash / Linux</li>
+              <li class="tag">GraphML / Cypher-like Query</li>
+            </ul>
+            <p class="timeline-meta">Repositories: SecProg_AOL, SNAproject, bakery-webapp</p>
+          </article>
+
+          <article class="card subgrid-card">
+            <h3>Certificates &amp; Spoken Languages</h3>
+            <ul>
+              <li><strong>HSK Level 5 (Chinese Proficiency):</strong> 265 / 300 (Listening 93, Reading 96, Writing 76; Speaking Advanced 62/100)</li>
+              <li><strong>Web Advance (Mikroskil / Sutomo 1):</strong> Score 94</li>
+              <li><strong>Algorithm &amp; Programming:</strong> Score 82</li>
+              <li><strong>Spoken Languages:</strong> Indonesian, English, Mandarin Chinese</li>
+            </ul>
+            <p class="timeline-meta">Continuous BSCP prep on PortSwigger Academy</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Wilson Tjokro &bull; Cyber Security Portfolio &bull; Jakarta, Indonesia</p>
+      <p>
+        <a href="https://github.com/WilsonGitacc" target="_blank" rel="noopener noreferrer">GitHub</a> &bull;
+        <a href="https://www.linkedin.com/in/wilson-tjokro-86302729b/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &bull;
+        <a href="mailto:wilsontjokro9@gmail.com">Email</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Native Modal Dialog for Image Zoom -->
+  <dialog id="image-lightbox" class="lightbox" closedby="any" aria-labelledby="lightbox-title">
+    <div class="lightbox-bar">
+      <h2 id="lightbox-title" class="lightbox-title">Preview</h2>
+      <form method="dialog">
+        <button type="submit" class="btn btn-sm">Close</button>
+      </form>
+    </div>
+    <img id="lightbox-img" class="lightbox-img" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </dialog>
+</body>
+</html>
