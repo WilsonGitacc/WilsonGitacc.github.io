@@ -486,18 +486,18 @@ Content-Type: application/json
           </div>
         </div>
 
-        <div class="card-grid-2">
-          <article class="card">
-            <h3>Research Architecture &amp; Scope</h3>
-            <ul>
-              <li><strong>Dual-Engine Pipeline:</strong> Implemented in both Python (<code>AzurePrivEscGraph</code> CLI exporting <code>report.json</code>, <code>paths.csv</code>, <code>attack-graph.graphml</code>) and TypeScript/React for an interactive web workbench.</li>
-              <li><strong>14 Snapshot Entity Types:</strong> Evaluates principals, nested groups, custom roles, <code>notActions</code> / <code>notDataActions</code> exclusions, PIM eligibility, compute managed identities, app ownership bridges, and Key Vault access policies.</li>
-              <li><strong>Safe Offline Cut Simulation:</strong> Clones the JSON snapshot in memory, removes a candidate assignment/membership edge, reruns path detection, and classifies impact as <code>Closed</code>, <code>Remaining</code>, or <code>Surfaced</code> before generating reviewable <code>az</code> CLI commands.</li>
-              <li><strong>Evaluation Protocol (Pending Lab Execution):</strong> Designed around 4 Research Questions (<code>RQ1&ndash;RQ4</code>) comparing seeded lab precision/recall, independent reviewer urgency rankings, post-cut fidelity, and capabilities against AzureHound + BloodHound CE.</li>
-            </ul>
-          </article>
+        <article class="card">
+          <h3>Research Architecture &amp; Scope</h3>
+          <ul>
+            <li><strong>Dual-Engine Pipeline:</strong> Implemented in both Python (<code>AzurePrivEscGraph</code> CLI exporting <code>report.json</code>, <code>paths.csv</code>, <code>attack-graph.graphml</code>) and TypeScript/React for an interactive web workbench.</li>
+            <li><strong>14 Snapshot Entity Types:</strong> Evaluates principals, nested groups, custom roles, <code>notActions</code> / <code>notDataActions</code> exclusions, PIM eligibility, compute managed identities, app ownership bridges, and Key Vault access policies.</li>
+            <li><strong>Safe Offline Cut Simulation:</strong> Clones the JSON snapshot in memory, removes a candidate assignment/membership edge, reruns path detection, and classifies impact as <code>Closed</code>, <code>Remaining</code>, or <code>Surfaced</code> before generating reviewable <code>az</code> CLI commands.</li>
+            <li><strong>Evaluation Protocol (Pending Lab Execution):</strong> Designed around 4 Research Questions (<code>RQ1&ndash;RQ4</code>) comparing seeded lab precision/recall, independent reviewer urgency rankings, post-cut fidelity, and capabilities against AzureHound + BloodHound CE.</li>
+          </ul>
+        </article>
 
-          <div class="gallery-figure">
+        <div class="gallery-grid">
+          <figure class="gallery-figure">
             <button
               type="button"
               class="media-trigger"
@@ -515,10 +515,8 @@ Content-Type: application/json
               <span class="zoom-hint">Zoom</span>
             </button>
             <figcaption><strong>Research Deck Overview:</strong> Co-authored at BINUS University (<code>COMP6696001</code>).</figcaption>
-          </div>
-        </div>
+          </figure>
 
-        <div class="gallery-grid">
           <figure class="gallery-figure">
             <button
               type="button"
